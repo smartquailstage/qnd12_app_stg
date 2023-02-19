@@ -1,8 +1,8 @@
 version: '3.9'
 
 services:
-  qnd10_app_stg:
-    image: smartquail/qnd10_app_stg:latest
+  qnd12_app_stg:
+    image: smartquail/qnd12_app_stg:latest
     restart: unless-stopped
     environment:
       - PORT=9000
@@ -15,15 +15,15 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/media
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/static
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/media
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/static
     networks: 
       - lansmartquail
    # command: sh -c "chmod +x /scripts/migrations.sh && sh /scripts/migrations.sh && sh /scripts/run.sh"
 
   qnode41_proxy:
-    image: smartquail/qnd10_nginx:dev
+    image: smartquail/qnd12_nginx:dev
     restart: always
     env_file:
       - .env_stage
@@ -35,9 +35,9 @@ services:
       - "80:80"
       - "443:443"
     volumes: 
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/media
-      - static-data-qnd10:/qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/static
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/media
+      - static-data-qnd12:/qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/static
     networks: 
       - lansmartquail
 
@@ -72,7 +72,7 @@ services:
 volumes:
   smartquaildb_data:
   redis_data:
-  static-data-qnd10:
+  static-data-qnd12:
 
 networks: 
    lansmartquail:
