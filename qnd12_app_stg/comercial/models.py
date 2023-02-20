@@ -66,7 +66,7 @@ class service(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    total =  models.DecimalField(_('Costo base de servicio'),max_digits=100000, decimal_places=2,null=True)
+    total =  models.DecimalField(_('Costo base de servicio'),max_digits=100, decimal_places=2,null=True)
 
     def get_cost(self):
         return self.price * self.puntos
