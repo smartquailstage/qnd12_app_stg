@@ -89,7 +89,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
    #SMARTQUAIL-BUSINESS-CONSULTING
     'shop',
-    #'comercial',
+    'comercial',
     'legal',
     #'coupons',
     'cart',
