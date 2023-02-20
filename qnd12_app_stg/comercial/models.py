@@ -56,7 +56,7 @@ class service(models.Model):
     #slug = models.SlugField(max_length=200, db_index=True)
     description = models.TextField(_('Descripción'),blank=True)
     puntos = models.IntegerField(_('Puntos de limpieza'))
-    price = models.DecimalField(_('Costo por punto'),max_digits=100, decimal_places=2,null=True)
+   # price = models.DecimalField(_('Costo por punto'),max_digits=100, decimal_places=2,null=True)
     category = models.ForeignKey(Category,
                                  related_name='products',
                                  on_delete=models.CASCADE,null=True)
