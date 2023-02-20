@@ -3,12 +3,12 @@ server {
     server_name                127.0.0.1 localhost 0.0.0.0; 
     
 location /static {
-    alias /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles;
+    alias /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles;
     client_max_body_size    1000M;
 }
 
 location /media {
-    alias  /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/media;
+    alias  /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/media;
     client_max_body_size    1000M;
 }
 

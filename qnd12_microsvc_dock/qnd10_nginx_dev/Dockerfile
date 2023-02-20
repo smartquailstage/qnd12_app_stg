@@ -9,26 +9,26 @@ COPY ./run.sh /run.sh
 
 
 ENV LISTEN_PORT=80
-ENV NGINX_PROXY=http://qnd10_app_stg:9000
-ENV APP_HOST=qnd10_app_stg
+ENV NGINX_PROXY=http://qnd12_app_stg:9000
+ENV APP_HOST=qnd12_app_stg
 ENV APP_PORT=9000
 
 USER root
 
-RUN mkdir -p /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles && \
-    chmod 755 /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles && \
-    mkdir -p /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/media && \
-    chmod 755 /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/media && \
-    mkdir -p /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/static && \
-    chmod 755 /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/static && \
+RUN mkdir -p /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles && \
+    chmod 755 /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles && \
+    mkdir -p /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/media && \
+    chmod 755 /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/media && \
+    mkdir -p /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/static && \
+    chmod 755 /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/static && \
 
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
 
-VOLUME /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/staticfiles
-VOLUME /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/mediafiles
-VOLUME /qnd10_app_stg/qnd10_app_stg/qnd10_app_stg/static
+VOLUME /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/staticfiles
+VOLUME /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/mediafiles
+VOLUME /qnd12_app_stg/qnd12_app_stg/qnd12_app_stg/static
 
 USER nginx
 #ENTRYPOINT [ "/entrypoint.sh" ]

@@ -22,7 +22,7 @@ services:
       - lansmartquail
    # command: sh -c "chmod +x /scripts/migrations.sh && sh /scripts/migrations.sh && sh /scripts/run.sh"
 
-  qnode41_proxy:
+  qnode12_proxy:
     image: smartquail/qnd12_nginx:dev
     restart: always
     env_file:
@@ -30,7 +30,7 @@ services:
     environment:
       - PORT=80
     depends_on:
-      - qnd10_app_stg
+      - qnd12_app_stg
     ports:
       - "80:80"
       - "443:443"
